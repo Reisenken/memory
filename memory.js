@@ -4,8 +4,10 @@ var choix1 = 0;
 var choix2 = 0;
 var id = [];
 var timer = 0;
+var timed = 0;
 var Temps = 0;
 var Essais = 0;
+var cartesvues = [];
 
 var time = document.getElementById("chrono");
 var jouer = document.getElementById("jouer");
@@ -249,6 +251,7 @@ document.getElementById("image8").addEventListener("click", function() {
 document.getElementById("image9").addEventListener("click", function() {
     document.getElementById("image9").style.backgroundImage = "url(" + affiche[9] + ")";
     id.push(9);
+
     if (choix1 === 0) {
         choix1 = affiche[9];
     }
@@ -306,29 +309,55 @@ function compare() {
     Essais++;
     console.log("Nb Essai = " + Essais);
     document.getElementById("nbEssais").innerHTML = "Nombre d'essais : " + Essais;
-    if (choix1 !== choix2) {
+    if (choix1 !== choix2 && id !== "") {
         chronoCartes();
     }
     else {
-        id = []; choix1 = 0 ; choix2 = 0;
+        cacheImages();
     }
 }
 
 // timer display Cards & display True / False
 function chronoCartes() {
-    if (Temps < 1) {
+    if (Temps <= 1) {
         Temps++;
         setTimeout(chronoCartes,1000);
-        console.log(Temps);
+        console.log("Temps =" + Temps);
     }
     else {
         document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
         document.getElementById("image"+id[1]).style.backgroundImage = "url(" + Dos + ")";
-        console.log(Temps);
+        console.log("Temps =" + Temps);
         clearTimeout(chronoCartes);
         id = []; choix1 = 0 ; choix2 = 0;
         Temps = 0;
     }
 }
 
+function cacheImages() {
 
+    if (timed  <= 1) {
+
+        if (timed <= 1) {
+            console.log("Contenu ID Animation" + id);
+            document.getElementById("image" + id[0]).style.animationName = "fondu";
+            document.getElementById("image" + id[0]).style.animationDuration = "1s";
+            document.getElementById("image" + id[1]).style.animationName = "fondu";
+            document.getElementById("image" + id[1]).style.animationDuration = "1s";
+            setTimeout(cacheImages, 1000);
+        }
+        console.log("timed = " + timed);
+        document.getElementById("image" + id[0]).style.opacity = "0";
+        document.getElementById("image" + id[1]).style.opacity = "0";
+        timed++;
+    }
+    else
+    {
+        console.log ("Valeur id: " + id);
+        clearTimeout(cacheImages);
+        timed = 0;
+        id = []; choix1 = 0 ; choix2 = 0;
+    }
+}
+
+//id = []; choix1 = 0 ; choix2 = 0;

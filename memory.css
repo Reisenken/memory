@@ -215,3 +215,8 @@ header {
     justify-content: space-evenly;
     height: 33%;
 }
+
+@keyframes fondu {
+    from { opacity: 1}
+    to {opacity: 0}
+}
