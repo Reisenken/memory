@@ -7,7 +7,12 @@ var timer = 0;
 var timed = 0;
 var Temps = 0;
 var Essais = 0;
-var cartesvues = [];
+var compteur = 0;
+var minutes;
+var secondes;
+var imagesSauvegardees = [];
+var Plus = 0;
+var Pix = 0;
 
 var time = document.getElementById("chrono");
 var jouer = document.getElementById("jouer");
@@ -17,10 +22,10 @@ var chronometre = 0;
 
 
 // Chronometer function
-function chrono() {
+var chrono = function() {
 
-    var minutes = Math.floor(timer/60) % 60;
-    var secondes = timer % 60;
+    minutes = Math.floor(timer/60) % 60;
+    secondes = timer % 60;
 
     timer++;
     if (secondes < 10 && secondes >= 0) {
@@ -31,7 +36,7 @@ function chrono() {
     }
     time.innerHTML = "Temps " + " " + minutes + " : " + secondes ;
     chronometre = setTimeout(chrono,1000);
-}
+};
 
 
 //Listen Start button and lunch the game.
@@ -40,6 +45,9 @@ jouer.addEventListener("click", function(){
 
     accueil.style.display = "none";
     jeu.style.display = "inherit";
+    Essais = 0;
+    document.getElementById("nbEssais").innerHTML = "Nombre d'essais : " + Essais;
+
 
     placement();
     chrono();
@@ -48,10 +56,11 @@ jouer.addEventListener("click", function(){
 // Create Table and random choice img placement
 
 function placement() {
-    var images = ["BlackM.png" , "DragonBYB.jpg" , "DragonMill.png" , "DragonYR.png" , "MS.jpg" , "UltimateDBYB.png" , "BlackM.png" ,
+     var images = ["BlackM.png" , "DragonBYB.jpg" , "DragonMill.png" , "DragonYR.png" , "MS.jpg" , "UltimateDBYB.png" , "BlackM.png" ,
         "DragonBYB.jpg" , "DragonMill.png" , "DragonYR.png" , "MS.jpg" , "UltimateDBYB.png"];
     affiche = [];
-
+        imagesSauvegardees = images.slice();
+        console.log ( "Copie de images = " + imagesSauvegardees);
     for (var i = images.length ; i > 0 ; i--) {
         var x = images.length - 1;
         var aleatoire = Math.round(Math.random() * x);
@@ -294,11 +303,11 @@ document.getElementById("image11").addEventListener("click", function() {
     }
     else {
         if (id[0] !== id[1]) {
-        choix2 = affiche[11];
-        compare();
-    }
+            choix2 = affiche[11];
+            compare();
+        }
         else {  document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
-        id = []; choix1 = 0; choix2 = 0;
+            id = []; choix1 = 0; choix2 = 0;
         }
     }
 });
@@ -338,26 +347,74 @@ function cacheImages() {
 
     if (timed  <= 1) {
 
-        if (timed <= 1) {
+        if (timed  >= 0) {
             console.log("Contenu ID Animation" + id);
             document.getElementById("image" + id[0]).style.animationName = "fondu";
-            document.getElementById("image" + id[0]).style.animationDuration = "1s";
+            document.getElementById("image" + id[0]).style.animationDuration = "3s";
             document.getElementById("image" + id[1]).style.animationName = "fondu";
-            document.getElementById("image" + id[1]).style.animationDuration = "1s";
+            document.getElementById("image" + id[1]).style.animationDuration = "3s";
+
             setTimeout(cacheImages, 1000);
         }
         console.log("timed = " + timed);
-        document.getElementById("image" + id[0]).style.opacity = "0";
-        document.getElementById("image" + id[1]).style.opacity = "0";
+
         timed++;
     }
     else
     {
+        document.getElementById("image" + id[0]).style.visibility = "hidden";
+        document.getElementById("image" + id[1]).style.visibility = "hidden";
         console.log ("Valeur id: " + id);
         clearTimeout(cacheImages);
         timed = 0;
-        id = []; choix1 = 0 ; choix2 = 0;
+        id = []; choix1 = 0 ; choix2 = 0; compteur++;
+        if (compteur === 6) {
+            StopChrono();
+        }
+        console.log(compteur);
     }
+
 }
 
-//id = []; choix1 = 0 ; choix2 = 0;
+function StopChrono() {
+    clearTimeout(chronometre);
+    resulatTableau();
+    RetourAccueil();
+}
+
+
+function resulatTableau() {
+
+    var Tableau = document.getElementById("tableau");
+    var ligneTableau = document.createElement("div");
+    Tableau.appendChild(ligneTableau);
+    ligneTableau.id = "identity" + Plus;
+    document.getElementById("identity"+Plus).style.height = "20px";
+    //document.getElementById("identity"+Plus).style.marginTop = Pix + "px";
+
+    document.getElementById("identity"+Plus).innerHTML = " Vos Essais : " + Essais + " --- " + "Votre temps : " + minutes + ":" + secondes ;
+    Pix += 20;
+    Plus++;
+}
+
+
+
+
+
+
+
+function RetourAccueil() {
+    accueil.style.display = "inherit";
+    jeu.style.display = "none";
+    compteur = 0; minutes = 0; secondes = 0; chronometre = 0; timer = 0;
+    console.log("Tableau Images = " + imagesSauvegardees.length);
+    for (var r = 0 ; r < imagesSauvegardees.length ; r++) {
+        console.log("valeur de r = " + r);
+        console.log("Tableau Images = " + imagesSauvegardees);
+        document.getElementById("image" + r).style.animationName = "";
+        document.getElementById("image" + r).style.animationDuration = "";
+        document.getElementById("image" + r).style.visibility = "visible";
+        document.getElementById("image" + r).style.backgroundImage = "url(" + Dos + ")";
+    }
+
+}
