@@ -1,3 +1,4 @@
+// variables creation
 var affiche = [];
 var Dos = "Dos.png";
 var choix1 = 0;
@@ -8,12 +9,11 @@ var timed = 0;
 var Temps = 0;
 var Essais = 0;
 var compteur = 0;
+var clic = 0;
 var minutes;
 var secondes;
 var imagesSauvegardees = [];
 var Plus = 0;
-var Pix = 0;
-
 var time = document.getElementById("chrono");
 var jouer = document.getElementById("jouer");
 var accueil = document.getElementById("accueil");
@@ -56,11 +56,14 @@ jouer.addEventListener("click", function(){
 // Create Table and random choice img placement
 
 function placement() {
+
      var images = ["BlackM.png" , "DragonBYB.jpg" , "DragonMill.png" , "DragonYR.png" , "MS.jpg" , "UltimateDBYB.png" , "BlackM.png" ,
         "DragonBYB.jpg" , "DragonMill.png" , "DragonYR.png" , "MS.jpg" , "UltimateDBYB.png"];
-    affiche = [];
+
+        affiche = [];
+
         imagesSauvegardees = images.slice();
-        console.log ( "Copie de images = " + imagesSauvegardees);
+
     for (var i = images.length ; i > 0 ; i--) {
         var x = images.length - 1;
         var aleatoire = Math.round(Math.random() * x);
@@ -74,275 +77,481 @@ function placement() {
 // Listen "cards" & compare
 document.getElementById("image0").addEventListener("click", function() {
     document.getElementById("image0").style.backgroundImage = "url(" + affiche[0] + ")";
-    id.push(0);
-    console.log(id);
-    if (choix1 === 0) {
-        choix1 = affiche[0];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(0);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[0];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[0];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image1").addEventListener("click", function() {
+
     document.getElementById("image1").style.backgroundImage = "url(" + affiche[1] + ")";
-    id.push(1);
-    console.log(id);
-    if (choix1 === 0) {
-        choix1 = affiche[1];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(1);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[1];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[1];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image2").addEventListener("click", function() {
+
     document.getElementById("image2").style.backgroundImage = "url(" + affiche[2] + ")";
-    id.push(2);
-    console.log(id);
-    if (choix1 === 0) {
-        choix1 = affiche[2];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(2);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[2];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[2];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image3").addEventListener("click", function() {
+
     document.getElementById("image3").style.backgroundImage = "url(" + affiche[3] + ")";
-    id.push(3);
-    console.log(id);
-    if (choix1 === 0) {
-        choix1 = affiche[3];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(3);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[3];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[3];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image4").addEventListener("click", function() {
+
     document.getElementById("image4").style.backgroundImage = "url(" + affiche[4] + ")";
-    id.push(4);
-    console.log(id);
-    if (choix1 === 0) {
-        choix1 = affiche[4];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(4);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[4];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[4];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image5").addEventListener("click", function() {
+
     document.getElementById("image5").style.backgroundImage = "url(" + affiche[5] + ")";
-    id.push(5);
-    if (choix1 === 0) {
-        choix1 = affiche[5];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+
+    if (id.length <= 1) {
+        id.push(5);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[5];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[5];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image6").addEventListener("click", function() {
+
     document.getElementById("image6").style.backgroundImage = "url(" + affiche[6] + ")";
-    id.push(6);
-    if (choix1 === 0) {
-        choix1 = affiche[6];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(6);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[6];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[6];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image7").addEventListener("click", function() {
+
     document.getElementById("image7").style.backgroundImage = "url(" + affiche[7] + ")";
-    id.push(7);
-    if (choix1 === 0) {
-        choix1 = affiche[7];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(7);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[7];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[7];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image8").addEventListener("click", function() {
+
     document.getElementById("image8").style.backgroundImage = "url(" + affiche[8] + ")";
-    id.push(8);
-    if (choix1 === 0) {
-        choix1 = affiche[8];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(8);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[8];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[8];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image9").addEventListener("click", function() {
-    document.getElementById("image9").style.backgroundImage = "url(" + affiche[9] + ")";
-    id.push(9);
 
-    if (choix1 === 0) {
-        choix1 = affiche[9];
-    }
-    else {
-        if (id[0] !== id[1]) {
+    document.getElementById("image9").style.backgroundImage = "url(" + affiche[9] + ")";
+
+    if (id.length <= 1) {
+        id.push(9);
+        clic++;
+
+        if (choix1 === 0) {
+
+            choix1 = affiche[9];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[9];
             compare();
+            clic = 0;
         }
-        else {
+        if ( id[0] === id[1]) {
             document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
             id = [];
             choix1 = 0;
             choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image10").addEventListener("click", function() {
+
     document.getElementById("image10").style.backgroundImage = "url(" + affiche[10] + ")";
-    id.push(10);
-    if (choix1 === 0) {
-        choix1 = affiche[10];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(10);
+        clic++;
+
+        if (choix1 === 0) {
+            choix1 = affiche[10];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
             choix2 = affiche[10];
             compare();
+            clic = 0;
         }
-        else {  document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
-        id = []; choix1 = 0; choix2 = 0;
+        if ( id[0] === id[1]) {
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
 document.getElementById("image11").addEventListener("click", function() {
+
     document.getElementById("image11").style.backgroundImage = "url(" + affiche[11] + ")";
-    id.push(11);
-    if (choix1 === 0) {
-        choix1 = affiche[11];
-    }
-    else {
-        if (id[0] !== id[1]) {
+
+    if (id.length <= 1) {
+        id.push(11);
+        clic++;
+
+        if (choix1 === 0 && id.length < 1) {
+
+            choix1 = affiche[11];
+        }
+        if (id.length === 2 && id[0] !== id[1] && clic === 2) {
+
             choix2 = affiche[11];
             compare();
+            clic = 0;
         }
-        else {  document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
-            id = []; choix1 = 0; choix2 = 0;
+        if ( id[0] === id[1]) {
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+            clic = 0;
         }
+    }
+    else
+    {
+        document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+        document.getElementById("image" + id[1]).style.backgroundImage = "url(" + Dos + ")";
+        id = [];
+        choix1 = 0;
+        choix2 = 0;
     }
 });
 
-
 // compare img
 function compare() {
+
     Essais++;
-    console.log("Nb Essai = " + Essais);
     document.getElementById("nbEssais").innerHTML = "Nombre d'essais : " + Essais;
-    if (choix1 !== choix2 && id !== "") {
+    console.log("id.length = " + id.length);
+    console.log("Choix1 = " + choix1);
+    console.log("Choix2 = " + choix2);
+    if (choix1 !== choix2 && id.length === 2 && id[0] !== id[1]) {
         chronoCartes();
     }
-    else {
+    else
+    {
         cacheImages();
     }
 }
 
 // timer display Cards & display True / False
 function chronoCartes() {
-    if (Temps <= 1) {
-        Temps++;
-        setTimeout(chronoCartes,1000);
-        console.log("Temps =" + Temps);
-    }
-    else {
-        document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
-        document.getElementById("image"+id[1]).style.backgroundImage = "url(" + Dos + ")";
-        console.log("Temps =" + Temps);
-        clearTimeout(chronoCartes);
-        id = []; choix1 = 0 ; choix2 = 0;
-        Temps = 0;
-    }
+
+        if (Temps <= 1 ) {
+            Temps++;
+            setTimeout(chronoCartes,1000);
+        }
+        else
+        {
+            document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
+            document.getElementById("image"+id[1]).style.backgroundImage = "url(" + Dos + ")";
+            clearTimeout(chronoCartes);
+            id = []; choix1 = 0 ; choix2 = 0;
+            Temps = 0;
+        }
+
 }
 
+// Lunch CSS animation and hide them.
 function cacheImages() {
 
     if (timed  <= 1) {
@@ -356,8 +565,6 @@ function cacheImages() {
 
             setTimeout(cacheImages, 1000);
         }
-        console.log("timed = " + timed);
-
         timed++;
     }
     else
@@ -371,18 +578,18 @@ function cacheImages() {
         if (compteur === 6) {
             StopChrono();
         }
-        console.log(compteur);
     }
 
 }
 
+// function to stop chronometer and lunch functions to reinitialise the game.
 function StopChrono() {
     clearTimeout(chronometre);
     resulatTableau();
     RetourAccueil();
 }
 
-
+// function for create div in the "historique" div.
 function resulatTableau() {
 
     var Tableau = document.getElementById("tableau");
@@ -390,31 +597,23 @@ function resulatTableau() {
     Tableau.appendChild(ligneTableau);
     ligneTableau.id = "identity" + Plus;
     document.getElementById("identity"+Plus).style.height = "20px";
-    //document.getElementById("identity"+Plus).style.marginTop = Pix + "px";
-
+    document.getElementById("identity"+Plus).style.fontSize = "1vm";
     document.getElementById("identity"+Plus).innerHTML = " Vos Essais : " + Essais + " --- " + "Votre temps : " + minutes + ":" + secondes ;
-    Pix += 20;
     Plus++;
 }
 
-
-
-
-
-
-
+//function to show again the accueil page & reset value of variables.
 function RetourAccueil() {
     accueil.style.display = "inherit";
     jeu.style.display = "none";
     compteur = 0; minutes = 0; secondes = 0; chronometre = 0; timer = 0;
-    console.log("Tableau Images = " + imagesSauvegardees.length);
+
     for (var r = 0 ; r < imagesSauvegardees.length ; r++) {
-        console.log("valeur de r = " + r);
-        console.log("Tableau Images = " + imagesSauvegardees);
         document.getElementById("image" + r).style.animationName = "";
         document.getElementById("image" + r).style.animationDuration = "";
         document.getElementById("image" + r).style.visibility = "visible";
         document.getElementById("image" + r).style.backgroundImage = "url(" + Dos + ")";
     }
-
 }
+
+var tempo = id.slice();
