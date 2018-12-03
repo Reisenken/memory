@@ -21,6 +21,7 @@ var jeu = document.getElementById("Jeu");
 var chronometre = 0;
 
 
+
 // Chronometer function
 var chrono = function() {
 
@@ -78,7 +79,7 @@ function placement() {
 document.getElementById("image0").addEventListener("click", function() {
     document.getElementById("image0").style.backgroundImage = "url(" + affiche[0] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(0);
         clic++;
 
@@ -99,6 +100,15 @@ document.getElementById("image0").addEventListener("click", function() {
             choix1 = 0;
             choix2 = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            clic = 0;
+            console.log("ID sup à 2" + id);
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -114,7 +124,7 @@ document.getElementById("image1").addEventListener("click", function() {
 
     document.getElementById("image1").style.backgroundImage = "url(" + affiche[1] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(1);
         clic++;
 
@@ -136,6 +146,15 @@ document.getElementById("image1").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            clic = 0;
+            console.log("ID sup à 2" + id);
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -151,7 +170,7 @@ document.getElementById("image2").addEventListener("click", function() {
 
     document.getElementById("image2").style.backgroundImage = "url(" + affiche[2] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(2);
         clic++;
 
@@ -173,6 +192,15 @@ document.getElementById("image2").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -188,7 +216,7 @@ document.getElementById("image3").addEventListener("click", function() {
 
     document.getElementById("image3").style.backgroundImage = "url(" + affiche[3] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(3);
         clic++;
 
@@ -210,6 +238,15 @@ document.getElementById("image3").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -225,7 +262,7 @@ document.getElementById("image4").addEventListener("click", function() {
 
     document.getElementById("image4").style.backgroundImage = "url(" + affiche[4] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(4);
         clic++;
 
@@ -247,6 +284,15 @@ document.getElementById("image4").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -263,7 +309,7 @@ document.getElementById("image5").addEventListener("click", function() {
     document.getElementById("image5").style.backgroundImage = "url(" + affiche[5] + ")";
 
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(5);
         clic++;
 
@@ -285,6 +331,15 @@ document.getElementById("image5").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -300,7 +355,7 @@ document.getElementById("image6").addEventListener("click", function() {
 
     document.getElementById("image6").style.backgroundImage = "url(" + affiche[6] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(6);
         clic++;
 
@@ -322,6 +377,15 @@ document.getElementById("image6").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -337,7 +401,7 @@ document.getElementById("image7").addEventListener("click", function() {
 
     document.getElementById("image7").style.backgroundImage = "url(" + affiche[7] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(7);
         clic++;
 
@@ -359,6 +423,14 @@ document.getElementById("image7").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -374,7 +446,7 @@ document.getElementById("image8").addEventListener("click", function() {
 
     document.getElementById("image8").style.backgroundImage = "url(" + affiche[8] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(8);
         clic++;
 
@@ -396,6 +468,14 @@ document.getElementById("image8").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -411,7 +491,7 @@ document.getElementById("image9").addEventListener("click", function() {
 
     document.getElementById("image9").style.backgroundImage = "url(" + affiche[9] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(9);
         clic++;
 
@@ -433,6 +513,14 @@ document.getElementById("image9").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -448,7 +536,7 @@ document.getElementById("image10").addEventListener("click", function() {
 
     document.getElementById("image10").style.backgroundImage = "url(" + affiche[10] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(10);
         clic++;
 
@@ -468,6 +556,14 @@ document.getElementById("image10").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 0) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -483,7 +579,7 @@ document.getElementById("image11").addEventListener("click", function() {
 
     document.getElementById("image11").style.backgroundImage = "url(" + affiche[11] + ")";
 
-    if (id.length <= 1) {
+    if (id.length <= 1 && clic <=1) {
         id.push(11);
         clic++;
 
@@ -505,6 +601,14 @@ document.getElementById("image11").addEventListener("click", function() {
             choix2 = 0;
             clic = 0;
         }
+        if (clic === 1  && id.length === 1) {
+            console.log("ID sup à 2" + id);
+            clic = 0;
+            document.getElementById("image" + id[0]).style.backgroundImage = "url(" + Dos + ")";
+            id = [];
+            choix1 = 0;
+            choix2 = 0;
+        }
     }
     else
     {
@@ -518,17 +622,20 @@ document.getElementById("image11").addEventListener("click", function() {
 
 // compare img
 function compare() {
-
     Essais++;
     document.getElementById("nbEssais").innerHTML = "Nombre d'essais : " + Essais;
     console.log("id.length = " + id.length);
     console.log("Choix1 = " + choix1);
     console.log("Choix2 = " + choix2);
-    if (choix1 !== choix2 && id.length === 2 && id[0] !== id[1]) {
+    if (choix1 !== choix2 && id.length === 2 && id[0] !== id[1] && clic === 2) {
+        console.log("Lancement de chronocarte");
+        console.log("ID avant chronoCartes = " + id);
         chronoCartes();
     }
     else
     {
+        console.log("Lancement de cacheimages");
+        console.log("ID avant cacheImages = " + id);
         cacheImages();
     }
 }
@@ -536,19 +643,20 @@ function compare() {
 // timer display Cards & display True / False
 function chronoCartes() {
 
-        if (Temps <= 1 ) {
+        if (Temps <= 1 && clic === 2 ) {
             Temps++;
             setTimeout(chronoCartes,1000);
         }
         else
         {
+            console.log ("Id à vérifier = " + id);
+            console.log("Click à vérifier = " + clic);
             document.getElementById("image"+id[0]).style.backgroundImage = "url(" + Dos + ")";
             document.getElementById("image"+id[1]).style.backgroundImage = "url(" + Dos + ")";
             clearTimeout(chronoCartes);
             id = []; choix1 = 0 ; choix2 = 0;
             Temps = 0;
         }
-
 }
 
 // Lunch CSS animation and hide them.
@@ -586,6 +694,7 @@ function cacheImages() {
 function StopChrono() {
     clearTimeout(chronometre);
     resulatTableau();
+    document.getElementById("jouer").innerHTML = "Rejouer";
     RetourAccueil();
 }
 
@@ -598,14 +707,16 @@ function resulatTableau() {
     ligneTableau.id = "identity" + Plus;
     document.getElementById("identity"+Plus).style.height = "20px";
     document.getElementById("identity"+Plus).style.fontSize = "1vm";
-    document.getElementById("identity"+Plus).innerHTML = " Vos Essais : " + Essais + " --- " + "Votre temps : " + minutes + ":" + secondes ;
+    document.getElementById("identity"+Plus).innerHTML = " Nombre d'Essais : " + Essais + " --- " + "Votre temps : " + minutes + ":" + secondes ;
     Plus++;
 }
 
-//function to show again the accueil page & reset value of variables.
+//function to show again the page "accueil" & reset values of variables.
 function RetourAccueil() {
     accueil.style.display = "inherit";
     jeu.style.display = "none";
+    document.getElementById("tableau").style.visibility = "visible";
+    document.getElementById("Titre2").style.visibility = "visible";
     compteur = 0; minutes = 0; secondes = 0; chronometre = 0; timer = 0;
 
     for (var r = 0 ; r < imagesSauvegardees.length ; r++) {
@@ -615,5 +726,3 @@ function RetourAccueil() {
         document.getElementById("image" + r).style.backgroundImage = "url(" + Dos + ")";
     }
 }
-
-var tempo = id.slice();

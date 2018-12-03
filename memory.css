@@ -1,3 +1,8 @@
+body {
+background-image: url("Ecran.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
 
 header {
     width: 100%;
@@ -8,16 +13,16 @@ header {
 
 #Titre {
     font-size: 3.5em;
-    border: 3px solid black;
+    border: 3px solid darkviolet;
+    color: black;
     text-align: center;
+    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F
 }
 
 #accueil {
     width: 80%;
     height: 35em;
-    border: 2px solid red;
     margin: auto;
-
 }
 
 #jouer {
@@ -26,7 +31,7 @@ header {
     margin-left: 25%;
     margin-top: 3%;
     margin-bottom: 2%;
-    background-color: blue;
+    background-color: darkviolet;
     border : 3px solid white;
     color: white;
     font-size: 2em;
@@ -36,32 +41,35 @@ header {
 
 #jouer:hover {
     background-color: white;
-    border : 3px solid blue;
-    color: blue;
+    border : 3px solid darkviolet;
+    color: darkviolet;
 }
 
 #Titre2 {
     width: 100%;
     text-align: center;
+    color: white; text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F;
+    visibility: hidden;
 }
 
 #tableau {
-    border : 2px dotted red;
     width: 70%;
     height: 50%;
     margin-left: 15%;
     text-align: center;
     font-size: 1rem;
-    color : blue;
-    background-color: white;
+    color : white;
+    font-weight: bold;
+    background-color: darkorchid;
     border-radius: 15px;
+    visibility: hidden;
 }
 
 #Jeu {
     width: 80%;
     height: 35em;
     margin-left: 10%;
-    border: 2px solid green;
+    border: 2px solid darkorchid;
     color: white;
     display: none;
 }
@@ -69,36 +77,36 @@ header {
 #compteur {
     width: 100%;
     height: 6%;
-    border : 2px solid black;
     display: flex;
 }
 
 #nbEssais {
     width: 20%;
     height: 100%;
-    border: 2px solid red;
+    background-color: darkorchid;
     margin-left: 35%;
     margin-right: 20%;
-    color: red;
+    color: black;
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
+    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F;
 }
 
 #chrono {
     width: 25%;
     height: 100%;
-    border: 2px solid blue;
-    color: red;
+    background-color: darkorchid;
+    color: black;
     font-size: 1.5em;
     font-weight: bold;
     text-align: center;
+    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F;
 }
 
 #images {
     width: 100%;
     height: 93%;
-    border: 2px solid red;
 }
 
 #image1 {
